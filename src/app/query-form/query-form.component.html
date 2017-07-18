@@ -1,0 +1,11 @@
+<form (ngSubmit)="onSubmit()" [formGroup]="queryForm" novalidate>
+	<div class="form">
+		<div class="input-group">
+			<label class="form-label">I'am looking for: </label>
+			<input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" formControlName="name" />
+			<button [disabled]="queryForm.invalid" class="btn btn-primary" type="submit">
+				<span class="glyphicon glyphicon-search"></span>&nbsp;Find
+			</button>
+		</div>
+	</div>
+</form>
