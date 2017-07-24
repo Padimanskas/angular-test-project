@@ -1,4 +1,5 @@
  <li class="list-group-item justify-content-between">
+ 	<div class="time">&nbsp;{{ item.time | date:'medium' }}</div>
     <div><i class="glyphicon glyphicon-file"></i>&nbsp;{{ item.name }}</div>
     <span class="pull-xs-right">
        <button (click)="onDelete()" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span>&nbsp;delete</button>

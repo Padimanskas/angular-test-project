@@ -10,17 +10,24 @@ import { Fire2Service } from '../services/fire2.service';
 
 export class QueryFormComponent implements OnInit {
 
-  queryForm: FormGroup;  
+  queryForm: FormGroup;
+
+  public show: boolean = false; 
 
   constructor(private fb: FormBuilder, public fire2Service: Fire2Service){}
 
   onSubmit() {
-    this.fire2Service.add(this.queryForm.value);
+    let query = Object.assign({}, this.queryForm.value, this.getTime());
+    this.fire2Service.add(query);
     this.queryForm.reset();
   }
 
   ngOnInit(): void {
 	this.createForm();
+  }
+
+  getTime() {
+    return {time: new Date().toString()};
   }
 
   createForm() {
